@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
 
+  before_action :authenticate_user!
   # back-end code for pages/index
   def index
   end

@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'devise'
 # For JQuery
 gem 'jquery-rails'
 # For Twitter UI navbar

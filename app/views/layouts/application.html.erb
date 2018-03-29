@@ -12,6 +12,9 @@
     <%= render '/layouts/nav' %>
 
     <div class="container" style="width:65%;">
+      <span class="notice"><%= notice %></span>
+      <span class="alert"><%= alert %></span>
+      
       <%= yield %>
     </div>
   </body>
