@@ -1,6 +1,8 @@
-<nav class="navbar navbar-default">
+<%= stylesheet_link_tag    'nav', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<nav class="navbar navbar-default" style="background: #99afcc;">
  <div class="container-fluid">
-   <!-- Brand and toggle get grouped for better mobile display -->
+   <div class="abc" style="color:#000;">
    <div class="navbar-header">
      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
        <span class="sr-only">Toggle navigation</span>
@@ -15,11 +17,12 @@
    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 
-     <ul class="nav navbar-nav navbar-right">
+     <ul class="nav navbar-nav navbar-right" style="color: #000;">
 
-       <li><%= link_to('Sign up', new_user_registration_path)%></li>
+       <li style="color: #000;"><%= link_to('Sign up', new_user_registration_path)%></li>
        <li><%= link_to('Sign in', new_user_session_path)%></li>
      </ul>
    </div><!-- /.navbar-collapse -->
+ </div>
  </div><!-- /.container-fluid -->
 </nav>
