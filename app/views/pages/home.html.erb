@@ -1,29 +1,85 @@
 <div class="row">
   <div class="col-xs-3">
     <div class="panel panel-default">
-      <div class="panel-body">
-        <p>Stats</p>
+      <div class="panel-image hide-panel-body">
+        <img src="/cover.jpg" class="panel-image-preview cover-img">
+      </div>
+      <div class="panel-footer">
+        <div class="row">
+          <div class="col-sm-2"><img src="avatar1.png" height="55px" width="55px"></div>
+          <div class="col-sm-10"><h4 style="text-align: center;"><%= current_user.username %></h4></div>
+          <div class="col-sm-12" style="margin-top: 10px;">
+            <div class="col-sm-6" style="font-size: 90%; opacity: 0.7;">Sesh<br />
+              <h6 style="font-size: 200%">16</h6>
+            </div>
+            <div class="col-sm-6" style="font-size: 90%; opacity: 0.7;">Buddies<br />
+              <h6 style="font-size: 200%">16</h6>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="panel panel-default">
       <div class="panel-body">
-        <p>trend</p>
+        <h4 style="color: grey; font-size: 125%;">Open Sessions</h4>
+        <a href="#">Sesh One</a><br />
+        <span style="color: grey">Active Users: 16,873</span><br /><br />
+        <a href="#">Sesh Two</a><br />
+        <span style="color: grey">Active Users: 12,892</span><br /><br />
+        <a href="#">Sesh Three</a><br />
+        <span style="color: grey">Active Users: 10,271</span><br /><br />
+        <a href="#">Sesh Four</a><br />
+        <span style="color: grey">Active Users: 19,123</span><br /><br />
+        <a href="#">Sesh Five</a><br />
+        <span style="color: grey">Active Users: 15,021</span><br /><br />
+        <a href="#">Sesh Six</a><br />
+        <span style="color: grey">Active Users: 6,175</span><br /><br />
+        <a href="#">Sesh Seven</a><br />
+        <span style="color: grey">Active Users: 1,272</span><br /><br />
       </div>
     </div>
   </div>
   <div class="col-xs-6">
+    <%= render '/components/post_form' %><br /> <br />
+
     <% for @p in @posts %>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <p><%= @p.content %></p>
+      <div class="panel panel-default post-panel">
+        <div class="panel-body row">
+
+          <div class="col-sm-1">
+            <img src="/avatar1.png" height="55px" width="55px" />
+          </div>
+
+          <div class="col-sm-11">
+            <p class="post-title"><span class="post-owner"><%= User.find(@p.user_id).username %></span><span class="post-date"> - <%= @p.created_at.to_formatted_s(:short) %></span></p>
+            <p class="posts-content"><%= @p.content %></p>
+          </div>
+
+          <div class="col-sm-12">
+            <p class="links">
+              <span class="glyphicon glyphicon-comment g-links" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-heart g-links" aria-hidden="true"></span>
+              <span class="glyphicon glyphicon-option-horizontal g-links" aria-hidden="true"></span>
+              <a href="">View Conversation</a>
+            </p>
+          </div>
         </div>
       </div>
     <% end %>
+    <div class="panel panel-default post-panel">
+      <div class="panel-body row">
+        <div class="col-sm-12">
+          <center><img src="/logo.png" height="25px" width="25px" style="margin-bottom: 2vh;" />
+            <a href="#top"><p class="opacity: 0.7; color: grey;">Back to Top <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></p></a>
+          </center>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="col-xs-3">
     <div class="panel panel-default">
       <div class="panel-body">
-        <p>about</p>
+        <p style="opacity: 0.7; font-size: 90%;">© 2018  Session  About  Help  Blog  Jobs  Privacy  Policy  Ads  Info  Advertise  Settings</p>
       </div>
     </div>
   </div>
