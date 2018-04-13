@@ -1,18 +1,22 @@
-<div class="panel panel-default post-form-panel">
-  <div class="panel-body row">
-    <div class="col-sm-1">
-      <img src="/avatar1.png" height="40px" width="40px" />
-    </div>
+<% if user_signed_in? %>
 
-    <div class="col-sm-11">
-      <%= form_for(@newPost) do |f| %>
-        <center>
-          <div class="field" style="margin-left: 25px;">
-            <%= f.text_field :content, autofocus: true, class: "form-control" %>
-            <span style="float: right;"><%= f.submit "Sesh", class: "btn btn-primary" %></span>
-          </div>
-        </center>
-      <% end %>
+  <div class="panel panel-default post-form-panel">
+    <div class="panel-body row">
+      <div class="col-sm-1">
+        <img src="/avatar1.png" height="40px" width="40px" />
+      </div>
+
+      <div class="col-sm-11">
+        <%= form_for(@newPost) do |f| %>
+          <center>
+            <div class="field" style="margin-left: 25px;">
+              <%= f.text_field :content, autofocus: true, class: "form-control" %>
+              <span style="float: right;"><%= f.submit "Sesh", class: "btn btn-primary" %></span>
+            </div>
+          </center>
+        <% end %>
+      </div>
     </div>
-  </div>
-</div>
+  </div> 
+
+<% end %>

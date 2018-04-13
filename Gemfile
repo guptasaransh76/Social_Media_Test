@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'acts_as_votable', '~> 0.11.1'
+# For likes/Dislikes
 gem 'devise'
 # For JQuery
 gem 'jquery-rails'
